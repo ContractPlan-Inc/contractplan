@@ -11,8 +11,35 @@ export default function HomePage() {
           ContractPlan gives you intelligent templates, real-time alerts, and built-in oversight to manage contracts, bids, and deadlines—without drowning in admin work.
         </p>
         <div style={{ marginTop: '2rem' }}>
-          <a href="#" style="margin-right: 1rem; padding: 0.75rem 1.5rem; background-color: white; color: #1e3a8a; border-radius: 8px; font-weight: bold;">Get Started Free</a>
-          <a href="#" style="padding: 0.75rem 1.5rem; border: 2px solid white; border-radius: 8px; font-weight: bold; color: white;">See Pricing</a>
+          <a
+            href="#"
+            style={{
+              marginRight: '1rem',
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'white',
+              color: '#1e3a8a',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              display: 'inline-block',
+              textDecoration: 'none'
+            }}
+          >
+            Get Started Free
+          </a>
+          <a
+            href="#"
+            style={{
+              padding: '0.75rem 1.5rem',
+              border: '2px solid white',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              color: 'white',
+              display: 'inline-block',
+              textDecoration: 'none'
+            }}
+          >
+            See Pricing
+          </a>
         </div>
         <div style={{ marginTop: '3rem' }}>
           <Image

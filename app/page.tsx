@@ -1,29 +1,25 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="p-8 font-sans">
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-blue-800">Automate Smarter. Eliminate Chaos.</h1>
-        <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">
-          ContractPlan gives you intelligent templates, real-time alerts, and built-in oversight to manage contracts, bids, and deadlines—without drowning in admin work.
-        </p>
-      </section>
-      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="bg-white rounded-2xl shadow p-6">
-          <h3 className="font-semibold text-xl text-blue-700">📄 Smart Templates</h3>
-          <p className="text-gray-600 mt-2">Standardize contracts with built-in intelligence and reduce legal risk.</p>
+    <main className="min-h-screen bg-gradient-to-br from-blue-900 to-green-200 text-white p-8">
+      <section className="max-w-5xl mx-auto text-center space-y-6">
+        <h1 className="text-5xl font-bold">Automate Smarter. Eliminate Chaos.</h1>
+        <p className="text-xl text-white/90">ContractPlan gives you intelligent templates, real-time alerts, and built-in oversight to manage contracts, bids, and deadlines—without drowning in admin work.</p>
+        <div className="mt-6 space-x-4">
+          <Button>Get Started Free</Button>
+          <Button variant="outline">See Pricing</Button>
         </div>
-        <div className="bg-white rounded-2xl shadow p-6">
-          <h3 className="font-semibold text-xl text-blue-700">⏰ Real-Time Alerts</h3>
-          <p className="text-gray-600 mt-2">Never miss a renewal, deadline, or compliance check again.</p>
-        </div>
-        <div className="bg-white rounded-2xl shadow p-6">
-          <h3 className="font-semibold text-xl text-blue-700">🧠 Built-in Oversight</h3>
-          <p className="text-gray-600 mt-2">Give leadership full visibility into contract health and obligations.</p>
-        </div>
+        <Image
+          src="/hero-screenshot.png"
+          alt="App Screenshot"
+          width={1000}
+          height={600}
+          className="mx-auto mt-10 rounded-xl shadow-xl"
+        />
       </section>
     </main>
   );

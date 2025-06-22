@@ -1,0 +1,134 @@
+npm warn using --force Recommended protections disabled.
+
+up to date, audited 382 packages in 943ms
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> contractplan@1.0.0 build
+> next build
+
+   ▲ Next.js 14.1.0
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/page.tsx
+Module not found: Can't resolve '@/components/ui/button'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors
+npm warn using --force Recommended protections disabled.
+
+up to date, audited 382 packages in 909ms
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> contractplan@1.0.0 build
+> next build
+
+   ▲ Next.js 14.1.0
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/page.tsx
+Module not found: Can't resolve '@/components/ui/button'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors
+npm warn using --force Recommended protections disabled.
+
+up to date, audited 382 packages in 904ms
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+up to date, audited 382 packages in 985ms
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> contractplan@1.0.0 build
+> next build
+
+   ▲ Next.js 14.1.0
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/page.tsx
+Module not found: Can't resolve '@/components/ui/button'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors
+
+up to date, audited 382 packages in 1s
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> contractplan@1.0.0 build
+> next build
+
+   ▲ Next.js 14.1.0
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./app/page.tsx:14:23
+Type error: Type 'string' has no properties in common with type 'Properties<string | number, string & {}>'.
+
+[0m [90m 12 |[39m         [33m<[39m[33m/[39m[33mp[39m[33m>[39m[0m
+[0m [90m 13 |[39m         [33m<[39m[33mdiv[39m style[33m=[39m{{ marginTop[33m:[39m [32m'2rem'[39m }}[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m           [33m<[39m[33ma[39m href[33m=[39m[32m"#"[39m style[33m=[39m[32m"margin-right: 1rem; padding: 0.75rem 1.5rem; background-color: white; color: #1e3a8a; border-radius: 8px; font-weight: bold;"[39m[33m>[39m[33mGet[39m [33mStarted[39m [33mFree[39m[33m<[39m[33m/[39m[33ma[39m[33m>[39m[0m
+[0m [90m    |[39m                       [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m           [33m<[39m[33ma[39m href[33m=[39m[32m"#"[39m style[33m=[39m[32m"padding: 0.75rem 1.5rem; border: 2px solid white; border-radius: 8px; font-weight: bold; color: white;"[39m[33m>[39m[33mSee[39m [33mPricing[39m[33m<[39m[33m/[39m[33ma[39m[33m>[39m[0m
+[0m [90m 16 |[39m         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[0m [90m 17 |[39m         [33m<[39m[33mdiv[39m style[33m=[39m{{ marginTop[33m:[39m [32m'3rem'[39m }}[33m>[39m[0m

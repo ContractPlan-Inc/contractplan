@@ -1,25 +1,28 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-900 to-green-200 text-white p-8">
-      <section className="max-w-5xl mx-auto text-center space-y-6">
-        <h1 className="text-5xl font-bold">Automate Smarter. Eliminate Chaos.</h1>
-        <p className="text-xl text-white/90">ContractPlan gives you intelligent templates, real-time alerts, and built-in oversight to manage contracts, bids, and deadlines—without drowning in admin work.</p>
-        <div className="mt-6 space-x-4">
-          <Button>Get Started Free</Button>
-          <Button variant="outline">See Pricing</Button>
+    <main style={{ minHeight: '100vh', padding: '2rem', background: 'linear-gradient(to bottom right, #1e3a8a, #bbf7d0)', color: 'white' }}>
+      <section style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>Automate Smarter. Eliminate Chaos.</h1>
+        <p style={{ fontSize: '1.25rem', marginTop: '1rem' }}>
+          ContractPlan gives you intelligent templates, real-time alerts, and built-in oversight to manage contracts, bids, and deadlines—without drowning in admin work.
+        </p>
+        <div style={{ marginTop: '2rem' }}>
+          <a href="#" style="margin-right: 1rem; padding: 0.75rem 1.5rem; background-color: white; color: #1e3a8a; border-radius: 8px; font-weight: bold;">Get Started Free</a>
+          <a href="#" style="padding: 0.75rem 1.5rem; border: 2px solid white; border-radius: 8px; font-weight: bold; color: white;">See Pricing</a>
         </div>
-        <Image
-          src="/hero-screenshot.png"
-          alt="App Screenshot"
-          width={1000}
-          height={600}
-          className="mx-auto mt-10 rounded-xl shadow-xl"
-        />
+        <div style={{ marginTop: '3rem' }}>
+          <Image
+            src="/hero-screenshot.png"
+            alt="App Screenshot"
+            width={1000}
+            height={600}
+            style={{ borderRadius: '12px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}
+          />
+        </div>
       </section>
     </main>
   );

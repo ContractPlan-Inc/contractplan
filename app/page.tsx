@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -16,9 +14,12 @@ export default function Home() {
             Simplify approvals, stay compliant, and automate the work you shouldn’t have to do.
           </p>
           <div className="flex gap-4 items-center">
-            <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-lg px-6 py-3">
-              <Link href="/app">Get Started</Link>
-            </Button>
+            <Link
+              href="/app"
+              className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white text-lg px-6 py-3 rounded-md"
+            >
+              Get Started
+            </Link>
             <span className="text-slate-400 text-sm">Free to use</span>
           </div>
         </div>

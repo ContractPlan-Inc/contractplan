@@ -7,6 +7,12 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-800">
+      <header className="flex items-center gap-4 px-6 pt-6">
+        <div className="flex items-center gap-3">
+          <Image src="/logo_128x128.png" alt="ContractPlan Logo" width={48} height={48} />
+          <span className="text-2xl font-semibold text-slate-900 tracking-tight">ContractPlan</span>
+        </div>
+      </header>
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1 space-y-6">
@@ -151,9 +157,9 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-slate-100 text-slate-500 text-sm text-center py-8">
-        <div className="flex justify-center items-center gap-4 mb-4">
-    <Image src="/logo.png" alt="ContractPlan Logo" width={40} height={40} className="invert" />
-          <span>Powered by ContractPlan · Salesforce · Stripe · Clerk · Crisp</span>
+        <div className="text-slate-500 text-sm mb-4">
+          Powered by ContractPlan · Salesforce · Stripe · Clerk · Crisp
+        </div>
         </div>
         <div className="text-xs text-slate-400">
           SalesBot and OnboardingBot active

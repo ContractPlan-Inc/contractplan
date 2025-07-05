@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white">
+    <main className="min-h-screen bg-white text-slate-800">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1 space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-sky-100">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-slate-900">
             Take control of your contracts, grants, and workflows
           </h1>
-          <p className="text-lg text-sky-300 max-w-xl">
+          <p className="text-lg text-slate-600 max-w-xl">
             Simplify approvals, stay compliant, and automate the work you shouldn’t have to do.
           </p>
           <div className="flex gap-4 items-center">
@@ -20,7 +20,7 @@ export default function Home() {
             >
               Get Started
             </Link>
-            <span className="text-slate-400 text-sm">Free to use</span>
+            <span className="text-slate-500 text-sm">Free to use</span>
           </div>
         </div>
         <div className="flex-1">
@@ -29,13 +29,13 @@ export default function Home() {
             alt="Approvals UI"
             width={640}
             height={480}
-            className="rounded-xl shadow-xl border border-slate-700"
+            className="rounded-xl shadow-xl border border-slate-200"
           />
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="bg-slate-800 py-16">
+      <section className="bg-sky-50 py-16">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           {[
             {
@@ -61,17 +61,17 @@ export default function Home() {
           ].map(({ icon, title, desc }) => (
             <div key={title} className="space-y-3">
               <div className="text-4xl">{icon}</div>
-              <h3 className="text-xl font-semibold text-sky-100">{title}</h3>
-              <p className="text-slate-400 text-sm">{desc}</p>
+              <h3 className="text-xl font-semibold text-slate-800">{title}</h3>
+              <p className="text-slate-600 text-sm">{desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-6 bg-slate-900">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-sky-100 mb-10">Trusted by modern teams</h2>
+          <h2 className="text-3xl font-semibold text-slate-800 mb-10">Trusted by modern teams</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -89,10 +89,10 @@ export default function Home() {
             ].map(({ name, quote }) => (
               <div
                 key={name}
-                className="bg-slate-800 p-6 rounded-xl shadow-md border border-slate-700 text-left"
+                className="bg-sky-50 p-6 rounded-xl shadow-sm border border-slate-200 text-left"
               >
-                <p className="text-slate-200 italic mb-4">{quote}</p>
-                <p className="text-sm text-slate-400">— {name}</p>
+                <p className="text-slate-800 italic mb-4">{quote}</p>
+                <p className="text-sm text-slate-500">— {name}</p>
               </div>
             ))}
           </div>
@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-slate-500 text-sm text-center py-6">
+      <footer className="bg-slate-100 text-slate-500 text-sm text-center py-6">
         © {new Date().getFullYear()} ContractPlan Inc. All rights reserved.
       </footer>
     </main>

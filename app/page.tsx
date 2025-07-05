@@ -1,84 +1,112 @@
-'use client';
+// app/page.tsx
+import Image from "next/image";
+import Link from "next/link";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900">
-      {/* Hero Section */}
-      <section className="text-center py-24 px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl font-bold mb-6"
-        >
-          Empowering Local Government & Nonprofits
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-8"
-        >
-          ContractPlan helps you organize contracts, track deadlines, and demonstrate accountability with AI-powered workflows and real-time collaboration.
-        </motion.p>
-        <div className="flex justify-center gap-4">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl">
-            Launch Demo
-          </Button>
-          <Button className="px-6 py-3 rounded-xl border border-gray-400">
-            Learn More
-          </Button>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Simple Pricing</h2>
-        <p className="mb-8 text-gray-600">Start free, upgrade as you grow. No hidden fees.</p>
-        <div className="flex justify-center gap-8 flex-wrap">
-          {[{ tier: 'Free', price: '$0', desc: 'Get started with essential features' }, { tier: 'Pro', price: '$9/mo', desc: 'Unlock full workflows and automations' }, { tier: 'Teams', price: '$19/mo', desc: 'Collaborate with your whole org' }].map(({ tier, price, desc }) => (
-            <div key={tier} className="p-6 w-64 rounded-2xl border border-gray-200 shadow-sm bg-white">
-              <h3 className="text-2xl font-semibold text-blue-700">{tier}</h3>
-              <p className="mt-2 text-sm text-gray-600">{desc}</p>
-              <p className="text-3xl font-bold my-4">{price}</p>
-              <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 py-2 rounded-lg">Select</Button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* NEXTSuite CTA */}
-      <section className="bg-purple-50 py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold text-purple-900 mb-4">Step Into the NEXTSuite</h2>
-        <p className="text-md text-purple-700 max-w-xl mx-auto mb-6">
-          Elite users unlock tools like AccordIQ, SummitIQ, and more. Seamless integrations, zero friction.
+    <main className="min-h-screen bg-gradient-to-br from-sky-50 to-emerald-100 text-gray-900 font-sans">
+      {/* Hero */}
+      <section className="px-6 py-24 text-center">
+        <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight text-blue-900">
+          Take control of your contracts,<br />grants, and workflows
+        </h1>
+        <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
+          Simplify your approvals, stay compliant, and automate the work you shouldn't have to do.
         </p>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl">
-          Explore NEXTSuite
-        </Button>
+        <div className="mt-8 flex justify-center gap-4">
+          <Link href="/app" className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-2xl font-semibold shadow">
+            Get Started
+          </Link>
+          <Link href="/demo" className="px-6 py-3 rounded-2xl border border-pink-600 text-pink-600 font-semibold hover:bg-pink-50">
+            View Demo
+          </Link>
+        </div>
+        <p className="text-sm text-gray-500 mt-2">Free to use</p>
+      </section>
+
+      {/* Features */}
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-6 pb-20">
+        <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <h3 className="text-lg font-bold mb-2">Manage contracts and grants</h3>
+          <p className="text-sm text-gray-600">Track all your agreements in one place</p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <h3 className="text-lg font-bold mb-2">Automate workflows</h3>
+          <p className="text-sm text-gray-600">Streamline processes with powerful automation</p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <h3 className="text-lg font-bold mb-2">Stay on top of approvals</h3>
+          <p className="text-sm text-gray-600">Keep your team accountable</p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <h3 className="text-lg font-bold mb-2">Get real-time insights</h3>
+          <p className="text-sm text-gray-600">From progress to compliance</p>
+        </div>
+      </section>
+
+      {/* Demo Screenshot */}
+      <section className="py-16 bg-white border-y border-gray-200 px-6">
+        <h2 className="text-3xl font-bold text-center mb-6">Interactive Demo</h2>
+        <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">
+          Walk through a live scenario with mock org data. See ContractPlan in action.
+        </p>
+        <div className="flex justify-center">
+          <Image
+            src="/screenshot-demo.png"
+            alt="ContractPlan App Screenshot"
+            width={800}
+            height={450}
+            className="rounded-xl shadow-xl border"
+          />
+        </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-6 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
-        <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-          {["ContractPlan gave us confidence in our audit.", "The collaboration features saved us hours weekly.", "We finally have a grip on our grant paperwork."]
-            .map((quote, i) => (
-              <blockquote key={i} className="p-6 border-l-4 border-blue-600 bg-blue-50">
-                <p className="text-gray-700 italic">“{quote}”</p>
-              </blockquote>
-          ))}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">What Users Say</h2>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic">"It's a must-have contract management tool!"</p>
+            <p className="mt-4 text-sm text-gray-500">— Ben Holland</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic">"The automation features save us a huge amount of time."</p>
+            <p className="mt-4 text-sm text-gray-500">— Malavika Dhar</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic">"We reduced our contract approval time by 32%!"</p>
+            <p className="mt-4 text-sm text-gray-500">— Fraser Shaw</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-green-600 text-white px-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Pricing</h2>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="bg-white text-gray-900 p-6 rounded-2xl text-center shadow">
+            <h3 className="text-xl font-bold">Free</h3>
+            <p className="mt-2 text-sm">1 project · Email support</p>
+            <p className="text-3xl font-extrabold my-4">$0/mo</p>
+          </div>
+          <div className="bg-white text-gray-900 p-6 rounded-2xl text-center shadow border-4 border-blue-500">
+            <h3 className="text-xl font-bold">Pro</h3>
+            <p className="mt-2 text-sm">Smart templates · Growth tracking</p>
+            <p className="text-3xl font-extrabold my-4">$9/mo</p>
+          </div>
+          <div className="bg-white text-gray-900 p-6 rounded-2xl text-center shadow">
+            <h3 className="text-xl font-bold">Business</h3>
+            <p className="mt-2 text-sm">Integrations · Role controls</p>
+            <p className="text-3xl font-extrabold my-4">$19/mo</p>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 py-10 border-t border-gray-200">
+      <footer className="text-center text-sm text-gray-500 py-10">
         © 2025 ContractPlan Inc. · <Link href="/privacy" className="underline">Privacy</Link> · <Link href="/terms" className="underline">Terms</Link>
       </footer>
     </main>
   );
 }
+

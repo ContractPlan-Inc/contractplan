@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-800">
       <header className="flex items-center gap-4 px-6 pt-6">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5">
           <Image src="/logo_128x128.png" alt="ContractPlan Logo" width={48} height={48} priority unoptimized />
           <span className="text-2xl font-semibold text-slate-900 tracking-tight">ContractPlan</span>
         </div>

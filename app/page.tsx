@@ -1,2 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>contractplan-vault</BucketName><RequestId>WG8Z3DQGFC4W2C80</RequestId><HostId>CzysULCAMQuxhMFGFeFW86H2Up21CE13Gb6owz3DN5Yu0CihImqx8xOrs3HMQZjkyZmCPIfLH5w=</HostId></Error>
+[PASTE VERIFIED HOMEPAGE CODE HERE — SEE NEXT MESSAGE]

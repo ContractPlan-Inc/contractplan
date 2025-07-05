@@ -160,7 +160,6 @@ export default function Home() {
         <div className="text-slate-500 text-sm mb-4">
           Powered by ContractPlan · Salesforce · Stripe · Clerk · Crisp
         </div>
-        </div>
         <div className="text-xs text-slate-400">
           SalesBot and OnboardingBot active
         </div>

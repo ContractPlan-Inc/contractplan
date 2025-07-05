@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      {/* Hero */}
       <section className="text-center py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
@@ -28,12 +29,13 @@ export default function Home() {
           <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl">
             Launch Demo
           </Button>
-          <Button variant="outline" className="px-6 py-3 rounded-xl">
+          <Button className="border border-gray-300 px-6 py-3 rounded-xl text-gray-700 hover:bg-gray-100">
             Learn More
           </Button>
         </div>
       </section>
 
+      {/* NEXTSuite CTA */}
       <section className="bg-purple-50 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold text-purple-900 mb-4">Step Into the NEXTSuite</h2>
         <p className="text-md text-purple-700 max-w-xl mx-auto mb-6">
@@ -44,9 +46,18 @@ export default function Home() {
         </Button>
       </section>
 
+      {/* Footer */}
       <footer className="text-center text-sm text-gray-500 py-10 border-t border-gray-200">
-        © 2025 ContractPlan Inc. · <Link href="/privacy" className="underline">Privacy</Link> · <Link href="/terms" className="underline">Terms</Link>
+        © 2025 ContractPlan Inc. ·{' '}
+        <Link href="/privacy" className="underline">
+          Privacy
+        </Link>{' '}
+        ·{' '}
+        <Link href="/terms" className="underline">
+          Terms
+        </Link>
       </footer>
     </main>
   );
 }
+

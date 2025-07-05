@@ -152,7 +152,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-slate-100 text-slate-500 text-sm text-center py-8">
         <div className="flex justify-center items-center gap-4 mb-4">
-          <Image src="/logo.svg" alt="ContractPlan Logo" width={28} height={28} />
+    <Image src="/logo.png" alt="ContractPlan Logo" width={40} height={40} className="invert" />
           <span>Powered by ContractPlan · Salesforce · Stripe · Clerk · Crisp</span>
         </div>
         <div className="text-xs text-slate-400">

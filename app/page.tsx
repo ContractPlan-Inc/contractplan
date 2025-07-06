@@ -22,52 +22,44 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Man and Machine Image */}
-      <section className="max-w-7xl mx-auto px-6 pt-12 pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative">
-        <div className="space-y-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"
-          >
-            Simplify contracts, grants, workflows & compliance
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-lg text-slate-600 max-w-xl"
-          >
-            Make room for the work that matters most.
-          </motion.p>
-        </div>
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-6 pt-16 pb-28 text-center relative">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+        >
+          Simplify contracts, grants, workflows & compliance
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="relative"
+          className="w-full flex justify-center"
         >
           <Image
             src="/screens/chaos-to-order-man-machine.png"
-            alt="Workflow automation illustration"
-            width={800}
-            height={480}
-            className="w-full h-auto object-contain -mt-8 -ml-6"
-          />
-          <Image
-            src="/screens/stack-of-papers.png"
-            alt="Messy stack of papers"
-            width={160}
-            height={180}
-            className="absolute bottom-0 left-0 transform -translate-x-16 translate-y-6"
+            alt="Automation in action"
+            width={900}
+            height={520}
+            className="object-contain"
           />
         </motion.div>
 
-        <div className="absolute bottom-0 left-0 w-full text-center text-slate-500 text-base pt-10">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-lg text-slate-600 mt-8"
+        >
+          Make room for the work that matters most.
+        </motion.p>
+
+        <p className="text-base text-slate-500 mt-4">
           Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
-        </div>
+        </p>
       </section>
 
       {/* Screenshot Section */}

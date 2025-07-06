@@ -59,15 +59,6 @@ export default function Home() {
           />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-md md:text-lg text-slate-600 max-w-2xl mx-auto mt-8"
-        >
-          Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +76,7 @@ export default function Home() {
 
       {/* Screenshot Section */}
       <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {['approvals', 'grants', 'workflows', 'compliance'].map((name) => (
+        {["approvals", "grants", "workflows", "compliance"].map((name) => (
           <div key={name} className="text-center">
             <Image
               src={`/screens/screenshot-${name}.png`}
@@ -124,24 +115,24 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           {[
             {
-              icon: '📝',
-              title: 'Manage contracts and grants',
-              desc: 'Track all your agreements in one place',
+              icon: "📝",
+              title: "Manage contracts and grants",
+              desc: "Track all your agreements in one place",
             },
             {
-              icon: '⚙️',
-              title: 'Automate workflows',
-              desc: 'Streamline processes with powerful automation',
+              icon: "⚙️",
+              title: "Automate workflows",
+              desc: "Streamline processes with powerful automation",
             },
             {
-              icon: '✅',
-              title: 'Stay on top of approvals',
-              desc: 'Keep your team accountable',
+              icon: "✅",
+              title: "Stay on top of approvals",
+              desc: "Keep your team accountable",
             },
             {
-              icon: '📈',
-              title: 'Get real-time insights',
-              desc: 'Know everything from progress to compliance',
+              icon: "📈",
+              title: "Get real-time insights",
+              desc: "Know everything from progress to compliance",
             },
           ].map(({ icon, title, desc }) => (
             <motion.div
@@ -166,16 +157,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Ben Hollana',
-                quote: '“It’s a must-have contract management tool!”',
+                name: "Ben Hollana",
+                quote: "“It’s a must-have contract management tool!”",
               },
               {
-                name: 'Malavika Dhar',
-                quote: '“The automation features save us a huge amount of time.”',
+                name: "Malavika Dhar",
+                quote: "“The automation features save us a huge amount of time.”",
               },
               {
-                name: 'Fraser Shaw',
-                quote: '“We reduced our contract approval time by 52%.“',
+                name: "Fraser Shaw",
+                quote: "“We reduced our contract approval time by 52%.“",
               },
             ].map(({ name, quote }) => (
               <motion.div

@@ -28,42 +28,59 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+          className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
         >
-          Simplify contracts, grants, workflows & compliance
+          Take control of your contracts, grants, and compliance
         </motion.h1>
-
-        <p className="text-lg text-slate-600 mb-2">Automation in action</p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="w-full flex justify-center mt-6"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="w-full flex justify-center mt-4"
         >
           <Image
             src="/screens/hero-chaos-to-order.png"
-            alt="ContractPlan simplifies contract chaos"
-            width={1200}
-            height={700}
-            className="object-contain"
+            alt="ContractPlan automation illustration"
+            width={1100}
+            height={660}
+            className="object-contain rounded-xl shadow-sm"
             priority
             unoptimized
           />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-2xl md:text-3xl text-slate-800 mt-10 mb-2 font-medium"
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="text-3xl md:text-4xl font-bold text-slate-900 mt-6"
         >
           Make room for the work that matters most.
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="text-lg md:text-xl text-slate-700 mt-4"
+        >
+          Built for local governments and nonprofits. Intuitive, compliant, actually helpful.
         </motion.p>
 
-        <p className="text-md md:text-lg text-slate-600 max-w-2xl mx-auto">
-          Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mt-6"
+        >
+          <Link
+            href="/app/demo"
+            className="inline-block bg-pacific-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg shadow-sm"
+          >
+            🎯 See It In Action
+          </Link>
+        </motion.div>
       </section>
 
       {/* Screenshot Section */}

@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Carousel */}
+      {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1 space-y-6">
           <motion.h1 
@@ -42,34 +42,40 @@ export default function Home() {
             Simplify compliance, accelerate approvals, and eliminate the busywork.
           </motion.p>
         </div>
+
+        {/* Screenshot Carousel */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
-          className="flex-1 space-y-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="flex-1 overflow-x-auto no-scrollbar snap-x snap-mandatory flex gap-6 pb-2 px-1"
         >
           {["approvals", "grants", "workflows", "compliance"].map((name) => (
-            <Image
-              key={name}
-              src={`/screens/screenshot-${name}.png`}
-              alt={`${name} screenshot`}
-              width={640}
-              height={400}
-              className="rounded-xl shadow-xl border border-slate-200"
-            />
+            <div key={name} className="snap-center shrink-0">
+              <Image
+                src={`/screens/screenshot-${name}.png`}
+                alt={`${name} screenshot`}
+                width={400}
+                height={260}
+                className="rounded-xl shadow-md border border-slate-200"
+              />
+            </div>
           ))}
         </motion.div>
       </section>
 
-      {/* Illustration Section */}
-      <section className="bg-sky-50 py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      {/* Chaos to Order Illustration */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto rounded-xl bg-white/90 shadow-lg p-6 flex flex-col items-center space-y-6">
+          <h2 className="text-2xl font-semibold text-slate-800 text-center">
+            From chaos to clarity
+          </h2>
           <Image
             src="/screens/chaos-to-order-final.png"
             alt="Order from Chaos Illustration"
-            width={1200}
-            height={600}
-            className="rounded-xl shadow-xl mx-auto"
+            width={1000}
+            height={500}
+            className="rounded-xl shadow-sm border border-slate-100"
           />
         </div>
       </section>
@@ -94,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section className="bg-sky-50 py-16">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           {[

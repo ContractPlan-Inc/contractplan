@@ -23,12 +23,12 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center relative">
+      <section className="max-w-7xl mx-auto px-6 pt-24 pb-20 text-center relative">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          className="text-5xl md:text-6xl font-bold text-slate-900 mb-6"
         >
           Take control of your contracts, grants, and compliance
         </motion.h1>
@@ -37,7 +37,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-lg md:text-xl text-slate-700 mb-6"
+          className="text-xl md:text-2xl text-slate-700 mb-10"
         >
           Make room for the work that matters most.
         </motion.p>
@@ -46,14 +46,14 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="w-full flex justify-center mt-4"
+          className="w-full flex justify-center mb-8"
         >
           <Image
             src="/screens/hero-chaos-to-order.png"
-            alt="ContractPlan chaos to clarity illustration"
+            alt="ContractPlan hero illustration"
             width={1200}
-            height={700}
-            className="object-contain"
+            height={720}
+            className="rounded-xl shadow-md object-contain"
             priority
             unoptimized
           />
@@ -65,9 +65,20 @@ export default function Home() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-6"
         >
+          <p className="text-lg md:text-xl text-slate-700">
+            Built for local governments and nonprofits. Intuitive, compliant, actually helpful.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mt-8"
+        >
           <Link
             href="/app/demo"
-            className="inline-block bg-pacific-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg shadow-sm"
+            className="inline-block bg-pacific-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg shadow"
           >
             🎯 See It In Action
           </Link>

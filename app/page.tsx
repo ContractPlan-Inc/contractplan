@@ -22,29 +22,57 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Embedded Man and Machine */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-32">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 max-w-3xl leading-tight">
-          Simplify contracts, grants, workflows & compliance
-        </h1>
-        <Image
-          src="/screens/chaos-to-order-man-machine.png"
-          alt="ContractPlan man and machine workflow"
-          width={800}
-          height={600}
-          className="absolute right-0 top-12 w-[600px] h-auto object-contain pointer-events-none"
-        />
-        <div className="absolute bottom-10 right-6 text-right text-xl text-emerald-700 font-medium">
-          make room for the work that matters most.
+      {/* Hero Section with Man and Machine Image */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative">
+        <div className="space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"
+          >
+            Simplify contracts, grants, workflows & compliance
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-lg text-slate-600 max-w-xl"
+          >
+            Make room for the work that matters most.
+          </motion.p>
         </div>
-        <div className="absolute bottom-2 left-6 text-base text-slate-600">
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="relative"
+        >
+          <Image
+            src="/screens/chaos-to-order-man-machine.png"
+            alt="Workflow automation illustration"
+            width={800}
+            height={480}
+            className="w-full h-auto object-contain -mt-8 -ml-6"
+          />
+          <Image
+            src="/screens/stack-of-papers.png"
+            alt="Messy stack of papers"
+            width={160}
+            height={180}
+            className="absolute bottom-0 left-0 transform -translate-x-16 translate-y-6"
+          />
+        </motion.div>
+
+        <div className="absolute bottom-0 left-0 w-full text-center text-slate-500 text-base pt-10">
           Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
         </div>
       </section>
 
       {/* Screenshot Section */}
       <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {["approvals", "grants", "workflows", "compliance"].map((name) => (
+        {['approvals', 'grants', 'workflows', 'compliance'].map((name) => (
           <div key={name} className="text-center">
             <Image
               src={`/screens/screenshot-${name}.png`}

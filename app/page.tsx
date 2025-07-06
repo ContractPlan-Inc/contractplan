@@ -3,16 +3,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [showDemoCTA, setShowDemoCTA] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowDemoCTA(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-white text-slate-800">
+    <main className="min-h-screen bg-white text-slate-800 relative">
       <header className="flex items-center gap-4 px-6 pt-6">
         <div className="flex items-center gap-1.5">
           <Image src="/logo_128x128.png" alt="ContractPlan Logo" width={48} height={48} priority unoptimized />
           <span className="text-2xl font-semibold text-slate-900 tracking-tight">ContractPlan</span>
         </div>
       </header>
+
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1 space-y-6">
@@ -30,7 +39,7 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-lg text-slate-600 max-w-xl"
           >
-            Simplify approvals, stay compliant, and automate the work you shouldn’t have to do.
+            Simplify compliance, accelerate approvals, and eliminate the busywork.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
@@ -48,9 +57,9 @@ export default function Home() {
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
           className="flex-1"
         >
           <Image
@@ -62,6 +71,38 @@ export default function Home() {
           />
         </motion.div>
       </section>
+
+{/* Illustration Section */}
+<section className="bg-sky-50 py-16">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <Image
+      src="/screens/chaos-to-order-final.png"
+      alt="Order from Chaos Illustration"
+      width={1200}
+      height={675}
+      className="rounded-xl shadow-xl mx-auto"
+      priority
+      unoptimized
+    />
+  </div>
+</section>
+
+      {/* Floating Demo CTA */}
+      {showDemoCTA && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed bottom-6 right-6 z-50"
+        >
+          <Link
+            href="/app/demo"
+            className="bg-pacific-blue hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg text-sm font-semibold"
+          >
+            🎯 Try the Demo Walkthrough
+          </Link>
+        </motion.div>
+      )}
 
       {/* AI Assistant Callout */}
       <section className="bg-gradient-to-r from-sky-50 to-emerald-50 py-12">
@@ -137,7 +178,7 @@ export default function Home() {
               },
               {
                 name: 'Fraser Shaw',
-                quote: '“We reduced our contract approval time by 52%.”',
+                quote: '“We reduced our contract approval time by 52%.“',
               },
             ].map(({ name, quote }) => (
               <motion.div

@@ -23,7 +23,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 pb-28 text-center relative">
+      <section className="max-w-7xl mx-auto px-6 pt-16 pb-16 text-center relative">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,13 +37,13 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="w-full flex justify-center"
+          className="w-full flex justify-center -mt-4"
         >
           <Image
-            src="/screens/chaos-to-order-man-machine.png"
+            src="/screens/chaos-to-order-man-machine-full.png"
             alt="Automation in action"
-            width={900}
-            height={520}
+            width={1000}
+            height={580}
             className="object-contain"
           />
         </motion.div>
@@ -52,12 +52,12 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-lg text-slate-600 mt-8"
+          className="text-3xl text-slate-700 mt-10 mb-2"
         >
           Make room for the work that matters most.
         </motion.p>
 
-        <p className="text-base text-slate-500 mt-4">
+        <p className="text-lg text-slate-600">
           Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
         </p>
       </section>

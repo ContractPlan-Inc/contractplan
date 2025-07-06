@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section with Carousel */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1 space-y-6">
           <motion.h1 
@@ -41,68 +41,38 @@ export default function Home() {
           >
             Simplify compliance, accelerate approvals, and eliminate the busywork.
           </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex gap-4 items-center"
-          >
-            <Link
-              href="/app"
-              className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white text-lg px-6 py-3 rounded-md"
-            >
-              Get Started
-            </Link>
-            <span className="text-slate-500 text-sm">Free to use</span>
-          </motion.div>
         </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
-          className="flex-1"
+          className="flex-1 space-y-4"
         >
-          <Image
-            src="/screens/approvals.png"
-            alt="Approvals UI"
-            width={640}
-            height={480}
-            className="rounded-xl shadow-xl border border-slate-200"
-          />
+          {["approvals", "grants", "workflows", "compliance"].map((name) => (
+            <Image
+              key={name}
+              src={`/screens/screenshot-${name}.png`}
+              alt={`${name} screenshot`}
+              width={640}
+              height={400}
+              className="rounded-xl shadow-xl border border-slate-200"
+            />
+          ))}
         </motion.div>
       </section>
 
-{/* Illustration Section */}
-<section className="bg-sky-50 py-16">
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    <Image
-      src="/screens/chaos-to-order-final.png"
-      alt="Order from Chaos Illustration"
-      width={1200}
-      height={675}
-      className="rounded-xl shadow-xl mx-auto"
-      priority
-      unoptimized
-    />
-  </div>
-</section>
-
-      {/* Floating Demo CTA */}
-      {showDemoCTA && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed bottom-6 right-6 z-50"
-        >
-          <Link
-            href="/app/demo"
-            className="bg-pacific-blue hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg text-sm font-semibold"
-          >
-            🎯 Try the Demo Walkthrough
-          </Link>
-        </motion.div>
-      )}
+      {/* Illustration Section */}
+      <section className="bg-sky-50 py-16">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <Image
+            src="/screens/chaos-to-order-final.png"
+            alt="Order from Chaos Illustration"
+            width={1200}
+            height={600}
+            className="rounded-xl shadow-xl mx-auto"
+          />
+        </div>
+      </section>
 
       {/* AI Assistant Callout */}
       <section className="bg-gradient-to-r from-sky-50 to-emerald-50 py-12">
@@ -113,12 +83,14 @@ export default function Home() {
           <p className="text-slate-600 mb-6">
             Powered by NEXT AI, our assistant helps you write, review, and route contracts in seconds.
           </p>
-          <Link
-            href="/app/demo"
-            className="inline-block bg-pacific-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg"
-          >
-            Try the Demo Walkthrough
-          </Link>
+          {showDemoCTA && (
+            <Link
+              href="/app/demo"
+              className="inline-block bg-pacific-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg"
+            >
+              🎯 Try the Demo Walkthrough
+            </Link>
+          )}
         </div>
       </section>
 

@@ -15,14 +15,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-slate-800 relative">
-      <header className="flex items-center gap-4 px-6 pt-6">
-        <div className="flex items-center gap-1.5">
+      <header className="flex items-center gap-3 px-6 pt-6">
+        <div className="flex items-center gap-2">
           <Image src="/logo_128x128.png" alt="ContractPlan Logo" width={48} height={48} priority unoptimized />
           <span className="text-2xl font-semibold text-slate-900 tracking-tight">ContractPlan</span>
         </div>
       </header>
 
-      {/* Hero Section with Illustration */}
+      {/* Updated Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <motion.h1 
@@ -31,7 +31,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"
           >
-            From chaos to clarity
+            Simplify contracts, grants, approvals & compliance—<br />
+            and make room for the work that matters.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
@@ -39,7 +40,7 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-lg text-slate-600 max-w-xl"
           >
-            Empower your team to manage contracts, approvals, and compliance with confidence.
+            Built for local governments and nonprofits. Intuitive. Compliant. Actually helpful.
           </motion.p>
         </div>
         <motion.div 
@@ -48,30 +49,29 @@ export default function Home() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <Image
-            src="/screens/chaos-to-order-final.png"
-            alt="Illustration of contract workflow clarity"
+            src="/screens/chaos-to-order-man-machine.png"
+            alt="From Chaos to Clarity Illustration"
             width={600}
-            height={400}
+            height={420}
             className="w-full h-auto rounded-xl shadow border border-slate-200"
           />
         </motion.div>
       </section>
 
-      {/* Screenshot Carousel */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-6">
-          {["approvals", "grants", "workflows", "compliance"].map((name) => (
-            <div key={name} className="snap-center shrink-0">
-              <Image
-                src={`/screens/screenshot-${name}.png`}
-                alt={`${name} screenshot`}
-                width={400}
-                height={260}
-                className="rounded-xl shadow-md border border-slate-200"
-              />
-            </div>
-          ))}
-        </div>
+      {/* Screenshots Display (flat grid) */}
+      <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {["approvals", "grants", "workflows", "compliance"].map((name) => (
+          <div key={name} className="text-center">
+            <Image
+              src={`/screens/screenshot-${name}.png`}
+              alt={`${name} screenshot`}
+              width={400}
+              height={260}
+              className="rounded-xl shadow-sm border border-slate-200"
+            />
+            <p className="mt-2 text-sm capitalize text-slate-600">{name}</p>
+          </div>
+        ))}
       </section>
 
       {/* AI Assistant Callout */}

@@ -42,8 +42,8 @@ export default function Home() {
           <Image
             src="/screens/hero-chaos-to-order.png"
             alt="ContractPlan automation illustration"
-            width={1100}
-            height={660}
+            width={935}
+            height={561}
             className="object-contain rounded-xl shadow-sm"
             priority
             unoptimized

@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Updated Hero Section */}
+      {/* Hero Section with Man and Machine */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <motion.h1 
@@ -31,7 +31,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"
           >
-            Simplify contracts, grants, approvals & compliance—<br />
+            Simplify contracts, grants, workflows & compliance—<br />
             and make room for the work that matters.
           </motion.h1>
           <motion.p 
@@ -50,15 +50,15 @@ export default function Home() {
         >
           <Image
             src="/screens/chaos-to-order-man-machine.png"
-            alt="From Chaos to Clarity Illustration"
-            width={600}
-            height={420}
-            className="w-full h-auto rounded-xl shadow border border-slate-200"
+            alt="ContractPlan man and machine workflow"
+            width={700}
+            height={480}
+            className="w-full h-auto object-contain"
           />
         </motion.div>
       </section>
 
-      {/* Screenshots Display (flat grid) */}
+      {/* Screenshot Section */}
       <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {["approvals", "grants", "workflows", "compliance"].map((name) => (
           <div key={name} className="text-center">
@@ -67,7 +67,7 @@ export default function Home() {
               alt={`${name} screenshot`}
               width={400}
               height={260}
-              className="rounded-xl shadow-sm border border-slate-200"
+              className="rounded-xl shadow-sm border border-slate-200 object-cover"
             />
             <p className="mt-2 text-sm capitalize text-slate-600">{name}</p>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features Section */}
       <section className="bg-sky-50 py-16">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
           {[

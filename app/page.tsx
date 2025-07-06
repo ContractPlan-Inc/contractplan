@@ -22,16 +22,16 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
-        <div className="flex-1 space-y-6">
+      {/* Hero Section with Illustration */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="space-y-6">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold leading-tight text-slate-900"
           >
-            Take control of your contracts, grants, and workflows
+            From chaos to clarity
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
@@ -39,17 +39,27 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="text-lg text-slate-600 max-w-xl"
           >
-            Simplify compliance, accelerate approvals, and eliminate the busywork.
+            Empower your team to manage contracts, approvals, and compliance with confidence.
           </motion.p>
         </div>
-
-        {/* Screenshot Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="flex-1 overflow-x-auto no-scrollbar snap-x snap-mandatory flex gap-6 pb-2 px-1"
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
+          <Image
+            src="/screens/chaos-to-order-final.png"
+            alt="Illustration of contract workflow clarity"
+            width={600}
+            height={400}
+            className="w-full h-auto rounded-xl shadow border border-slate-200"
+          />
+        </motion.div>
+      </section>
+
+      {/* Screenshot Carousel */}
+      <section className="max-w-6xl mx-auto px-6 pb-20">
+        <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-6">
           {["approvals", "grants", "workflows", "compliance"].map((name) => (
             <div key={name} className="snap-center shrink-0">
               <Image
@@ -61,22 +71,6 @@ export default function Home() {
               />
             </div>
           ))}
-        </motion.div>
-      </section>
-
-      {/* Chaos to Order Illustration */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto rounded-xl bg-white/90 shadow-lg p-6 flex flex-col items-center space-y-6">
-          <h2 className="text-2xl font-semibold text-slate-800 text-center">
-            From chaos to clarity
-          </h2>
-          <Image
-            src="/screens/chaos-to-order-final.png"
-            alt="Order from Chaos Illustration"
-            width={1000}
-            height={500}
-            className="rounded-xl shadow-sm border border-slate-100"
-          />
         </div>
       </section>
 

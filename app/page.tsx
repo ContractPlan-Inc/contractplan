@@ -1,24 +1,26 @@
-// ✅ V7.5: Live ContractPlan Homepage with real content
-
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-midnight to-pacific px-6 py-16 text-white">
+    <main className="min-h-screen bg-gradient-to-br from-midnight to-pacific px-6 py-12">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-5xl font-bold leading-tight mb-6 tracking-tight">
           Bring Order to Contract Chaos
         </h1>
         <p className="text-lg text-skyMist mb-10 max-w-3xl mx-auto">
-          ContractPlan streamlines workflows for local governments and nonprofits. Automate approvals, standardize documents, and accelerate execution.
+          ContractPlan streamlines workflows for local governments and nonprofits, helping teams move from scattered documents to aligned execution—instantly.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <Link href="/app" className="bg-emerald hover:bg-emerald/90 text-white font-semibold py-3 px-6 rounded-2xl transition">
-            Launch App
+        <div className="flex justify-center gap-4">
+          <Link href="/app">
+            <button className="bg-emerald hover:bg-emerald/80 text-white font-semibold px-6 py-3 rounded-2xl shadow transition">
+              Launch App
+            </button>
           </Link>
-          <Link href="/demo" className="border border-skyMist text-skyMist hover:text-white hover:border-white py-3 px-6 rounded-2xl transition">
-            See Demo
+          <Link href="/demo">
+            <button className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-2xl transition">
+              Walkthrough
+            </button>
           </Link>
         </div>
 

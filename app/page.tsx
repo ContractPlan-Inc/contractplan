@@ -1,75 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function HomePage() {
+export default function AppPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-midnight to-pacific px-6 py-12">
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl font-bold text-white leading-tight mb-6">
-          Bring Order to Contract Chaos
-        </h1>
-        <p className="text-lg text-skyMist mb-10 max-w-3xl mx-auto">
-          ContractPlan streamlines workflows for local governments and nonprofits, saving time, reducing errors, and restoring trust.
-        </p>
-        <div className="flex justify-center gap-6 mb-16">
-          <Link
-            href="/app"
-            className="px-6 py-3 bg-emerald text-white font-semibold rounded-xl shadow-md hover:shadow-lg"
-          >
-            Launch Demo
-          </Link>
-          <Link
-            href="/pricing"
-            className="px-6 py-3 border border-skyMist text-skyMist font-semibold rounded-xl hover:bg-white/10"
-          >
-            View Pricing
-          </Link>
-        </div>
+    <main className="min-h-screen bg-gray-50 text-gray-900">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold mb-6 text-center">ContractPlan App Demo</h1>
 
-        {/* Screenshot Carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          {[
-            "dashboard-screenshot.png",
-            "document-screenshot.png",
-            "workflow-screenshot.png",
-          ].map((src, idx) => (
-            <div
-              key={idx}
-              className="bg-white/5 rounded-2xl p-4 shadow-inner backdrop-blur"
-            >
-              <Image
-                src={`/media/${src}`}
-                alt="App screenshot"
-                width={600}
-                height={400}
-                className="rounded-xl"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Sidebar */}
+          <aside className="md:col-span-1 bg-white rounded-2xl shadow p-4">
+            <h2 className="text-lg font-semibold mb-4">Navigation</h2>
+            <ul className="space-y-2 text-blue-600">
+              <li><Link href="#overview">🏢 Organization Overview</Link></li>
+              <li><Link href="#docs">📄 Documents</Link></li>
+              <li><Link href="#assistant">🤖 AI Assistant</Link></li>
+            </ul>
+          </aside>
+
+          {/* Main Content */}
+          <section className="md:col-span-2 space-y-12">
+            <div id="overview" className="bg-white rounded-2xl shadow p-6">
+              <h2 className="text-xl font-semibold mb-2">🏢 Organization Overview</h2>
+              <p className="text-gray-700">Acme City Hall • 42 active workflows • Last audit passed ✔</p>
             </div>
-          ))}
-        </div>
 
-        {/* Animation embed */}
-        <div className="mt-12">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="rounded-2xl shadow-lg w-full max-w-3xl mx-auto"
-          >
-            <source src="/media/chaos-to-order.mp4" type="video/mp4" />
-          </video>
-        </div>
+            <div id="docs" className="bg-white rounded-2xl shadow p-6">
+              <h2 className="text-xl font-semibold mb-2">📄 Document Center</h2>
+              <ul className="list-disc pl-6 text-gray-700">
+                <li>Vendor Onboarding Agreement</li>
+                <li>Subgrant Compliance Report</li>
+                <li>Community Services MOU</li>
+              </ul>
+            </div>
 
-        {/* AI Assistant Callout */}
-        <div className="mt-16 text-center text-lg text-coolGray max-w-xl mx-auto">
-          <p>
-            Need help? Our built-in AI Assistant is available 24/7 to guide you
-            through contracts, workflows, and integrations.
-          </p>
+            <div id="assistant" className="bg-white rounded-2xl shadow p-6">
+              <h2 className="text-xl font-semibold mb-2">🤖 AI Assistant</h2>
+              <p className="text-gray-700 mb-2">"Highlight key risks in this contract"</p>
+              <div className="text-sm text-emerald-700 bg-emerald-50 p-3 rounded">
+                ✅ 3 flagged clauses
+                <br />✅ Recommendation: Merge section 6 and 7
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
-  );
+  )
 }
 

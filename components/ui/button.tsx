@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', ...props }, ref) => {
-    const base = 'rounded px-4 py-2 font-medium transition';
+    const base = 'rounded px-4 py-2 font-medium transition focus:outline-none';
     const variants = {
       default: 'bg-blue-600 text-white hover:bg-blue-700',
       outline: 'border border-gray-300 text-gray-700 hover:bg-gray-100',

@@ -1,21 +1,36 @@
-import { cn } from "@/lib/utils";
-import * as React from "react";
+// components/ui/button.tsx
+import { ButtonHTMLAttributes, ReactNode } from 'react';
+import clsx from 'clsx';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
+  variant?: 'default' | 'outline';
+  size?: 'sm' | 'md';
+};
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, ...props }, ref) => (
+export function Button({ children, variant = 'default', size = 'md', className, ...props }: ButtonProps) {
+  const variantStyles = {
+    default: 'bg-blue-600 text-white hover:bg-blue-700',
+    outline: 'border border-gray-300 text-gray-700 bg-white hover:bg-gray-100',
+  };
+
+  const sizeStyles = {
+    sm: 'px-3 py-1 text-sm',
+    md: 'px-4 py-2 text-base',
+  };
+
+  return (
     <button
-      className={cn(
-        "inline-flex items-center justify-center rounded-md bg-blue-700 px-4 py-2 text-white hover:bg-blue-800 transition font-semibold",
+      {...props}
+      className={clsx(
+        'rounded font-medium transition duration-150 ease-in-out',
+        variantStyles[variant],
+        sizeStyles[size],
         className
       )}
-      ref={ref}
-      {...props}
     >
       {children}
     </button>
-  )
-);
+  );
+}
 
-Button.displayName = "Button";

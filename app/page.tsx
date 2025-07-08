@@ -9,7 +9,7 @@ export default function Home() {
   const [showDemo, setShowDemo] = useState(false);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-blue-900 to-slate-900 text-gray-100">
+    <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-blue-900 to-slate-900 text-gray-900">
       <section className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           Bring order to chaos. <br />

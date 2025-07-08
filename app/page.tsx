@@ -1,6 +1,7 @@
 // app/page.tsx
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -8,72 +9,80 @@ export default function Home() {
   const [showDemo, setShowDemo] = useState(false);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#1A2238] via-[#283044] to-[#1A2238] text-white px-6 py-16">
-      <div className="max-w-6xl mx-auto space-y-20">
-        {/* Hero */}
-        <section className="text-center space-y-6">
-          <h1 className="text-5xl font-bold leading-tight">
-            Finally, clarity in contract management.
-          </h1>
-          <p className="text-lg text-gray-300">
-            ContractPlan helps public sector teams track milestones, ensure compliance, and stay audit-ready — all in one simple workspace.
-          </p>
-          <div className="space-x-4">
-            <Link
-              href="/app"
-              className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg shadow"
-            >
+    <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-blue-900 to-slate-900 text-white">
+      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          Bring order to chaos. <br />
+          <span className="text-emerald-400">Smarter workflows start here.</span>
+        </h1>
+        <p className="text-lg md:text-xl text-sky-200 mb-10">
+          ContractPlan helps local governments and nonprofits streamline documentation,
+          compliance, and internal reviews—without the busywork.
+        </p>
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <button
+            onClick={() => setShowDemo(!showDemo)}
+            className="bg-emerald-400 text-black px-6 py-3 rounded-2xl text-lg font-semibold shadow hover:scale-105 transition"
+          >
+            {showDemo ? 'Hide' : '▶️ Walkthrough Demo'}
+          </button>
+          <Link href="/app">
+            <button className="border border-white px-6 py-3 rounded-2xl text-lg hover:bg-white hover:text-black transition">
               Launch App
-            </Link>
-            <button
-              onClick={() => setShowDemo(!showDemo)}
-              className="inline-block border border-gray-400 hover:border-white text-white font-semibold px-6 py-3 rounded-lg"
-            >
-              {showDemo ? 'Hide Walkthrough' : 'See Walkthrough'}
             </button>
+          </Link>
+        </div>
+      </section>
+
+      {showDemo && (
+        <section className="max-w-5xl mx-auto px-6 pb-24 -mt-12">
+          <div className="rounded-xl overflow-hidden ring-2 ring-emerald-400 shadow-xl">
+            <Image
+              src="/media/screenshot-demo.png"
+              alt="Demo screenshot"
+              width={1200}
+              height={720}
+              className="w-full"
+            />
           </div>
         </section>
+      )}
 
-        {/* Demo Walkthrough */}
-        {showDemo && (
-          <section className="bg-white text-black p-6 rounded-lg shadow-md space-y-4">
-            <h2 className="text-2xl font-bold">AI Demo Walkthrough</h2>
-            <p>
-              Meet your assistant: “Contract #2045 is nearing renewal. Would you like to send a notice?”
+      <section className="bg-slate-800/50 py-16 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-slate-900 p-6 rounded-xl shadow hover:ring-2 hover:ring-emerald-500 transition">
+            <h3 className="text-xl font-bold text-emerald-300 mb-2">AI Assistant</h3>
+            <p className="text-sky-200">
+              Get smart suggestions for compliance, deadlines, and review based on your uploaded documents.
             </p>
-            <p>
-              Auto-detects late reports, compliance gaps, and budget flags — and helps your team stay ahead.
-            </p>
-            <Link href="/app/ai/assistant" className="text-blue-600 underline">
-              Go to AI Assistant
-            </Link>
-          </section>
-        )}
-
-        {/* Logos / Trust */}
-        <section className="text-center space-y-4">
-          <p className="text-gray-400 uppercase tracking-widest">Trusted by public impact teams</p>
-          <div className="flex justify-center gap-10 opacity-70">
-            <span>🏛️ Acme County</span>
-            <span>🏙️ Metro Services</span>
-            <span>💼 LocalWorks</span>
           </div>
-        </section>
+          <div className="bg-slate-900 p-6 rounded-xl shadow hover:ring-2 hover:ring-emerald-500 transition">
+            <h3 className="text-xl font-bold text-emerald-300 mb-2">Instant Onboarding</h3>
+            <p className="text-sky-200">
+              Upload your org’s policies or start from a template. You’re guided through every step.
+            </p>
+          </div>
+          <div className="bg-slate-900 p-6 rounded-xl shadow hover:ring-2 hover:ring-emerald-500 transition">
+            <h3 className="text-xl font-bold text-emerald-300 mb-2">Built for Public Sector</h3>
+            <p className="text-sky-200">
+              ContractPlan is designed for small teams in government and nonprofit settings.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Screenshot */}
-        <section className="text-center">
-          <img
-            src="/screenshots/dashboard.png"
-            alt="ContractPlan dashboard"
-            className="rounded-xl shadow-lg border border-white/10 mx-auto w-full max-w-4xl"
-          />
-        </section>
+      <section className="py-16 px-6 text-center bg-slate-950">
+        <p className="text-sm text-sky-400 uppercase tracking-widest mb-4">Trusted by mission-driven teams</p>
+        <div className="flex flex-wrap justify-center items-center gap-6 grayscale opacity-70">
+          <Image src="/media/partner1.png" alt="Partner 1" width={100} height={40} />
+          <Image src="/media/partner2.png" alt="Partner 2" width={100} height={40} />
+          <Image src="/media/partner3.png" alt="Partner 3" width={100} height={40} />
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="text-center text-sm text-gray-400">
-          ContractPlan Inc. — Empowering transparency in public contracting.
-        </footer>
-      </div>
+      <footer className="py-12 text-center text-sm text-sky-500">
+        © {new Date().getFullYear()} ContractPlan Inc. · Empowering small teams to do big things.
+      </footer>
     </main>
   );
 }

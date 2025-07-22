@@ -1,81 +1,96 @@
-// V12 homepage rebuild — vault-approved visuals, layout, tone, and functionality
-// Do not regress visual identity or copy. Logo, layout, and tone are final per Vault.
-
-import Image from 'next/image';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ScreenshotCarousel } from '@/components/ScreenshotCarousel';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#f8fafc] to-[#e6f0eb] text-gray-800">
-      <header className="flex items-center justify-between px-6 py-4 md:px-10">
+    <main className="min-h-screen bg-gradient-to-b from-[#f9fafb] to-white text-gray-900">
+      <header className="px-6 md:px-10 py-6 flex items-center justify-between border-b">
         <div className="flex items-center space-x-3">
-          <Image src="/logo.svg" alt="ContractPlan Logo" width={32} height={32} />
-          <span className="text-xl font-semibold tracking-tight text-gray-900">ContractPlan</span>
+          <Image
+            src="/logo-blue-check.svg"
+            alt="ContractPlan Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+          />
+          <span className="text-xl font-semibold text-gray-800">ContractPlan</span>
         </div>
-        <nav className="hidden md:flex space-x-6 text-sm">
-          <Link href="#pricing" className="hover:text-emerald-600">Pricing</Link>
-          <Link href="/app" className="hover:text-emerald-600">App</Link>
-        </nav>
-        <div className="hidden md:flex items-center space-x-4">
+        <nav className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" asChild>
             <Link href="/sign-in">Sign in</Link>
           </Button>
           <Button asChild>
-            <Link href="/sign-up">Start free</Link>
+            <Link href="/app">Launch App</Link>
           </Button>
-        </div>
+        </nav>
       </header>
 
-      <section className="px-6 md:px-10 mt-12 md:mt-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 max-w-4xl mx-auto">
-          From chaos to order. <br />
-          <span className="text-emerald-600">Contract management, streamlined.</span>
+      <section className="px-6 md:px-10 py-24 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          From chaos to clarity
         </h1>
-        <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-          ContractPlan turns messy folders, missed deadlines, and forgotten obligations into clarity. Built for teams that care.
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Simple tools that free you up to focus on impact, not administration.
         </p>
-        <div className="mt-8 flex justify-center space-x-4">
-          <Button className="animate-pulse" size="lg" asChild>
-            <Link href="/app">View demo</Link>
+        <div className="mt-8 flex justify-center gap-4">
+          <Button size="lg" asChild className="transition-transform hover:scale-105">
+            <Link href="/app">Launch the App</Link>
           </Button>
-          <Button variant="outline" size="lg" asChild>
-            <Link href="#pricing">See pricing</Link>
+          <Button variant="outline" size="lg" asChild className="transition-transform hover:scale-105">
+            <Link href="#demo">View Demo</Link>
           </Button>
         </div>
       </section>
 
-      <section className="mt-20">
-        <ScreenshotCarousel images={["/screens/dashboard.png", "/screens/contracts.png", "/screens/files.png"]} />
+      <section className="mt-10 px-6 md:px-10" id="demo">
+        <div className="mx-auto max-w-6xl">
+          <ScreenshotCarousel
+            images={[
+              '/screens/dashboard.png',
+              '/screens/contracts.png',
+              '/screens/files.png',
+            ]}
+          />
+        </div>
       </section>
 
-      <section id="pricing" className="mt-24 bg-white py-16 px-6 md:px-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Simple pricing for every team</h2>
-        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-          Start for free, grow with us. Upgrade anytime.
+      <section className="mt-24 bg-sky-50 py-16 px-6 md:px-10 text-center" id="pricing">
+        <h2 className="text-3xl font-bold mb-6">Pricing Plans</h2>
+        <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+          Start free. Upgrade when you're ready to unlock more power.
         </p>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="rounded-xl border p-6">
-            <h3 className="text-lg font-semibold text-gray-800">Starter</h3>
-            <p className="text-4xl font-bold text-emerald-600">$0</p>
-            <p className="mt-2 text-sm text-gray-500">Unlimited contracts, 1 user</p>
+        <div className="flex flex-col md:flex-row justify-center gap-8">
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+            <h3 className="text-xl font-semibold mb-2">Free</h3>
+            <p className="text-gray-600 mb-4">For individuals and teams starting out</p>
+            <p className="text-2xl font-bold mb-6">$0/month</p>
+            <Button asChild>
+              <Link href="/sign-up">Start for Free</Link>
+            </Button>
           </div>
-          <div className="rounded-xl border p-6 border-emerald-600 shadow-lg">
-            <h3 className="text-lg font-semibold text-gray-800">Pro</h3>
-            <p className="text-4xl font-bold text-emerald-600">$9</p>
-            <p className="mt-2 text-sm text-gray-500">Everything in Starter + AI Assist + file repo</p>
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+            <h3 className="text-xl font-semibold mb-2">Pro</h3>
+            <p className="text-gray-600 mb-4">Unlock advanced tools and AI features</p>
+            <p className="text-2xl font-bold mb-6">$9/month</p>
+            <Button asChild>
+              <Link href="/sign-up">Upgrade to Pro</Link>
+            </Button>
           </div>
-          <div className="rounded-xl border p-6">
-            <h3 className="text-lg font-semibold text-gray-800">NEXTSuite</h3>
-            <p className="text-4xl font-bold text-emerald-600">$19</p>
-            <p className="mt-2 text-sm text-gray-500">All features + org dashboards, timelines, & integrations</p>
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+            <h3 className="text-xl font-semibold mb-2">NEXTSuite</h3>
+            <p className="text-gray-600 mb-4">For organizations ready for full automation</p>
+            <p className="text-2xl font-bold mb-6">$19/month</p>
+            <Button asChild>
+              <Link href="/sign-up">Explore Suite</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      <footer className="mt-24 mb-8 text-center text-sm text-gray-500">
+      <footer className="text-center text-sm text-gray-500 py-10">
         Built to make a difference by ContractPlan Inc.
       </footer>
     </main>

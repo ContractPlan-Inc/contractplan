@@ -24,7 +24,7 @@ export function ScreenshotCarousel() {
         {screenshots.map((_, i) => (
           <button
             key={i}
-            className={\`w-3 h-3 rounded-full \${i === index ? 'bg-emerald' : 'bg-gray-300'}\`}
+            className={`w-3 h-3 rounded-full ${i === index ? 'bg-emerald' : 'bg-gray-300'}`}
             onClick={() => setIndex(i)}
           />
         ))}

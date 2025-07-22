@@ -21,7 +21,9 @@ export function TableRow({ children }: { children: ReactNode }) {
   return <tr className="hover:bg-gray-50">{children}</tr>;
 }
 
-export function TableCell({ children }: { children: ReactNode }) {
-  return <td className="px-4 py-2 text-sm text-gray-700 border-b">{children}</td>;
+export function TableCell({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <td className={`px-4 py-2 text-sm text-gray-700 border-b ${className}`}>{children}</td>
+  );
 }
 

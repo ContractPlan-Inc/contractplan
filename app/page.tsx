@@ -30,7 +30,7 @@ export default function Home() {
 
       <section className="px-6 md:px-10 py-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          From chaos to clarity
+          From chaos to order
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
           Simple tools that free you up to focus on impact, not administration.

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import ScreenshotCarousel from '@/components/ScreenshotCarousel';
+import { ScreenshotCarousel } from '@/components/ScreenshotCarousel';
 
 export default function Home() {
   return (

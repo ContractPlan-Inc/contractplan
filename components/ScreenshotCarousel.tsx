@@ -1,35 +1,45 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const screenshots = [
-  '/screens/dashboard.png',
-  '/screens/contracts.png',
-  '/screens/files.png',
-];
+type ScreenshotCarouselProps = {
+  images: string[];
+};
 
-export default function ScreenshotCarousel() {
+export function ScreenshotCarousel({ images }: ScreenshotCarouselProps) {
   const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div className="w-full overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-[#1E2235]">
-      <div className="relative w-full h-[480px]">
-        <Image
-          src={screenshots[index]}
-          alt={`Screenshot ${index + 1}`}
-          fill
-          className="object-cover transition-all duration-700 ease-in-out"
-          priority
-        />
+    <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-md border border-gray-200 bg-white">
+      <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${index * 100}%)` }}>
+        {images.map((src, i) => (
+          <div key={i} className="min-w-full h-[440px] relative">
+            <Image
+              src={src}
+              alt={`Screenshot ${i + 1}`}
+              layout="fill"
+              objectFit="contain"
+              className="rounded-lg"
+              priority={i === 0}
+            />
+          </div>
+        ))}
       </div>
-      <div className="flex justify-center gap-2 mt-4">
-        {screenshots.map((_, i) => (
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full ${i === index ? 'bg-emerald-500' : 'bg-gray-300'}`}
-            aria-label={`Show screenshot ${i + 1}`}
+            className={`w-3 h-3 rounded-full ${i === index ? 'bg-emerald-600' : 'bg-gray-300'}`}
+            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>

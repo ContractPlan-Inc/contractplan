@@ -33,7 +33,7 @@ export default function Home() {
           From chaos to order
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Get control of your contracts, grants, and workflows
+          Simple tools that free you up to focus on impact, not administration.
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button size="lg" asChild className="transition-transform hover:scale-105">
@@ -48,11 +48,7 @@ export default function Home() {
       <section className="mt-10 px-6 md:px-10" id="demo">
         <div className="mx-auto max-w-6xl">
           <ScreenshotCarousel
-            images={[
-              '/screens/dashboard.png',
-              '/screens/contracts.png',
-              '/screens/files.png',
-            ]}
+            images={["/screens/dashboard.png", "/screens/contracts.png", "/screens/files.png"]}
           />
         </div>
       </section>

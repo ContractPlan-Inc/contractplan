@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#f9fafb] to-white text-gray-900">
+    <main className="min-h-screen bg-gradient-to-b from-white to-[#f9fafb] text-gray-900">
       <header className="px-6 md:px-10 py-6 flex items-center justify-between border-b">
         <div className="flex items-center space-x-3">
           <Image
@@ -33,7 +33,7 @@ export default function Home() {
           From chaos to order
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Simple tools that free you up to focus on impact, not administration.
+          Get control of your contracts, grants, and workflows
         </p>
         <div className="mt-8 flex justify-center gap-4">
           <Button size="lg" asChild className="transition-transform hover:scale-105">
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center gap-8">
           <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
             <h3 className="text-xl font-semibold mb-2">Free</h3>
-            <p className="text-gray-600 mb-4">For individuals and teams starting out</p>
+            <p className="text-gray-600 mb-4">Limited usage. Explore basic features.</p>
             <p className="text-2xl font-bold mb-6">$0/month</p>
             <Button asChild>
               <Link href="/sign-up">Start for Free</Link>
@@ -73,18 +73,18 @@ export default function Home() {
           </div>
           <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
             <h3 className="text-xl font-semibold mb-2">Pro</h3>
-            <p className="text-gray-600 mb-4">Unlock advanced tools and AI features</p>
+            <p className="text-gray-600 mb-4">Unlock AI, file uploads, timelines</p>
             <p className="text-2xl font-bold mb-6">$9/month</p>
             <Button asChild>
               <Link href="/sign-up">Upgrade to Pro</Link>
             </Button>
           </div>
           <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
-            <h3 className="text-xl font-semibold mb-2">NEXTSuite</h3>
-            <p className="text-gray-600 mb-4">For organizations ready for full automation</p>
+            <h3 className="text-xl font-semibold mb-2">Enterprise</h3>
+            <p className="text-gray-600 mb-4">Full org access, admin tools, integrations</p>
             <p className="text-2xl font-bold mb-6">$19/month</p>
             <Button asChild>
-              <Link href="/sign-up">Explore Suite</Link>
+              <Link href="/sign-up">Explore Enterprise</Link>
             </Button>
           </div>
         </div>

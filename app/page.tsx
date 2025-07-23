@@ -10,7 +10,7 @@ export default function Home() {
       <header className="px-6 md:px-10 py-6 flex items-center justify-between border-b">
         <div className="flex items-center space-x-3">
           <Image
-            src="/logo-blue-check.svg"
+            src="/logo-app-check.svg"
             alt="ContractPlan Logo"
             width={32}
             height={32}
@@ -59,7 +59,7 @@ export default function Home() {
           Start free. Upgrade when you're ready to unlock more power.
         </p>
         <div className="flex flex-col md:flex-row justify-center gap-8">
-          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3 hover:shadow-lg transition">
             <h3 className="text-xl font-semibold mb-2">Free</h3>
             <p className="text-gray-600 mb-4">Limited usage. Explore basic features.</p>
             <p className="text-2xl font-bold mb-6">$0/month</p>
@@ -67,7 +67,7 @@ export default function Home() {
               <Link href="/sign-up">Start for Free</Link>
             </Button>
           </div>
-          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3 hover:shadow-lg transition">
             <h3 className="text-xl font-semibold mb-2">Pro</h3>
             <p className="text-gray-600 mb-4">Unlock AI, file uploads, timelines</p>
             <p className="text-2xl font-bold mb-6">$9/month</p>
@@ -75,7 +75,7 @@ export default function Home() {
               <Link href="/sign-up">Upgrade to Pro</Link>
             </Button>
           </div>
-          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3">
+          <div className="border rounded-xl p-6 shadow bg-white w-full md:w-1/3 hover:shadow-lg transition">
             <h3 className="text-xl font-semibold mb-2">Enterprise</h3>
             <p className="text-gray-600 mb-4">Full org access, admin tools, integrations</p>
             <p className="text-2xl font-bold mb-6">$19/month</p>

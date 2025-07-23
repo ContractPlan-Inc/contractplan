@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { ScreenshotCarousel } from '@/components/ScreenshotCarousel';
+import { LiveScreenshotCarousel } from '@/components/LiveScreenshotCarousel';
+import { StartDemoButton } from '@/components/StartDemoButton';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -39,17 +39,13 @@ export default function Home() {
           <Button size="lg" asChild className="transition-transform hover:scale-105">
             <Link href="/app">Launch the App</Link>
           </Button>
-          <Button variant="outline" size="lg" asChild className="transition-transform hover:scale-105">
-            <Link href="#demo">View Demo</Link>
-          </Button>
+          <StartDemoButton />
         </div>
       </section>
 
       <section className="mt-10 px-6 md:px-10" id="demo">
         <div className="mx-auto max-w-6xl">
-          <ScreenshotCarousel
-            images={["/screens/dashboard.png", "/screens/contracts.png", "/screens/files.png"]}
-          />
+          <LiveScreenshotCarousel />
         </div>
       </section>
 

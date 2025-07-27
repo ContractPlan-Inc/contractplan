@@ -43,12 +43,16 @@ export default function Home() {
             <Link href="#demo">View Demo</Link>
           </Button>
         </div>
+
+        <div className="mt-12 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border">
+          <iframe src="/app" className="w-full h-[480px]" />
+        </div>
       </section>
 
       <section className="mt-10 px-6 md:px-10" id="demo">
         <div className="mx-auto max-w-6xl">
           <ScreenshotCarousel
-            images={["/screens/dashboard.png", "/screens/contracts.png", "/screens/files.png"]}
+            images={["/media/screenshots/screen1.png", "/media/screenshots/screen2.png", "/media/screenshots/screen3.png"]}
           />
         </div>
       </section>

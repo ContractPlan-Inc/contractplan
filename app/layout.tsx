@@ -1,12 +1,11 @@
-import './globals.css'
-import './globals.css'
-import './globals.css'
-import { ReactNode } from 'react'
+import type { Metadata } from 'next';
+import './globals.css';
+import { ReactNode } from 'react';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'ContractPlan',
   description: 'Empowering local governments and nonprofits.',
-}
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

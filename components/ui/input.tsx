@@ -1,9 +1,19 @@
-// components/ui/input.tsx
-import { InputHTMLAttributes } from 'react';
+import * as React from 'react';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+import { cn } from '@/lib/utils';
 
-export function Input(props: InputProps) {
-  return <input {...props} className="border rounded px-3 py-2 w-full" />;
-}
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type = 'text', ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        type={type}
+        className={cn('w-full rounded border px-3 py-2', className)}
+        {...props}
+      />
+    );
+  }
+);
+Input.displayName = 'Input';

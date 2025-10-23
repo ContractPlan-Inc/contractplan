@@ -1,31 +1,49 @@
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+
+const contracts = [
+  { name: 'Vendor MSA 2025', type: 'Service', owner: 'Amanda Liu', status: 'Active' },
+  { name: 'Grant Funding Q3', type: 'Grant', owner: 'Marcus Bell', status: 'Pending' },
+  { name: 'Facility Upgrade', type: 'Capital', owner: 'Priya Singh', status: 'In review' },
+] as const;
+
 export default function ContractsPage() {
   return (
-    <main className="p-8 text-white bg-[#0b1120] min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">All Contracts</h1>
-      <table className="w-full text-left table-auto border-collapse text-sm text-gray-300">
-        <thead>
-          <tr className="text-gray-400 border-b border-gray-700">
-            <th className="pb-2">Name</th>
-            <th className="pb-2">Type</th>
-            <th className="pb-2">Owner</th>
-            <th className="pb-2">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Vendor MSA 2025</td>
-            <td>Service</td>
-            <td>Amanda Liu</td>
-            <td>Active</td>
-          </tr>
-          <tr>
-            <td>Grant Funding Q3</td>
-            <td>Grant</td>
-            <td>Marcus Bell</td>
-            <td>Pending</td>
-          </tr>
-        </tbody>
-      </table>
+    <main className="space-y-6 bg-gradient-to-br from-midnight via-[#111c3a] to-pacific p-6 text-white">
+      <header className="space-y-1">
+        <h1 className="text-3xl font-semibold">Contracts</h1>
+        <p className="text-sm text-slate-200/80">
+          A centralized list of every contract in your workspace with owners, types, and current status.
+        </p>
+      </header>
+
+      <Card className="bg-white text-slate-900">
+        <CardContent className="p-0">
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableHeader>Name</TableHeader>
+                <TableHeader>Type</TableHeader>
+                <TableHeader>Owner</TableHeader>
+                <TableHeader>Status</TableHeader>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {contracts.map((contract) => (
+                <TableRow key={contract.name}>
+                  <TableCell>{contract.name}</TableCell>
+                  <TableCell>{contract.type}</TableCell>
+                  <TableCell>{contract.owner}</TableCell>
+                  <TableCell>
+                    <Badge variant="secondary">{contract.status}</Badge>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
     </main>
   );
 }

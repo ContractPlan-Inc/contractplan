@@ -84,7 +84,7 @@ export default function HomePage() {
             ["https://i.pravatar.cc/60?img=8", "Our nonprofit now has a clear path to scale. This was the missing link in our toolkit.", "Claire M., Director at CommunityBridge"]
           ].map(([img, quote, role], i) => (
             <div key={i} className="flex gap-4 items-start">
-              <img src={img} alt="Avatar" className="w-12 h-12 rounded-full" />
+              <Image src={img} alt="Avatar" width={48} height={48} className="h-12 w-12 rounded-full" />
               <blockquote className="text-gray-700 text-sm">
                 “{quote}”
                 <footer className="mt-2 text-sm text-gray-500">— {role}</footer>

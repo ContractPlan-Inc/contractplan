@@ -1,18 +1,28 @@
-// components/ui/badge.tsx
 import { ReactNode } from 'react';
+
+import { cn } from '@/lib/utils';
 
 type BadgeProps = {
   children: ReactNode;
   variant?: 'default' | 'secondary';
+  className?: string;
 };
 
-export function Badge({ children, variant = 'default' }: BadgeProps) {
-  const base = 'inline-block text-xs font-medium px-2.5 py-0.5 rounded';
-  const styles = {
-    default: 'bg-blue-100 text-blue-800',
-    secondary: 'bg-gray-100 text-gray-800',
-  };
+const variantStyles: Record<NonNullable<BadgeProps['variant']>, string> = {
+  default: 'bg-emerald-100 text-emerald-800',
+  secondary: 'bg-gray-100 text-gray-800',
+};
 
-  return <span className={`${base} ${styles[variant]}`}>{children}</span>;
+export function Badge({ children, variant = 'default', className }: BadgeProps) {
+  return (
+    <span
+      className={cn(
+        'inline-block rounded-full px-2.5 py-0.5 text-xs font-medium',
+        variantStyles[variant],
+        className,
+      )}
+    >
+      {children}
+    </span>
+  );
 }
-

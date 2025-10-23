@@ -1,9 +1,17 @@
 'use client';
 
+import type { Route } from 'next';
 import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+
+type Integration = {
+  name: string;
+  description: string;
+  status: 'Connected' | 'Needs setup' | 'Coming soon';
+  href?: Route;
+};
 
 const integrations = [
   {
@@ -23,7 +31,7 @@ const integrations = [
     description: 'Send agreements for signature directly from ContractPlan.',
     status: 'Coming soon',
   },
-] as const;
+] satisfies Integration[];
 
 export default function IntegrationsHub() {
   return (

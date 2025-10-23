@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply antialiased;
+}
+
+a {
+  @apply transition-colors;
+}
+
+a:hover {
+  @apply text-emerald;
+}
+
+::selection {
+  @apply bg-emerald text-white;
+}

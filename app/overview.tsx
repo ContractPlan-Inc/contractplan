@@ -1,12 +1,12 @@
 // app/overview.tsx
 
-'use client';
+'use client'
 
-import { Card, CardContent } from '@/components/ui/card';
-import { useState } from 'react';
+import { Card, CardContent } from '@/components/ui/card'
+import { useState } from 'react'
 
 export default function OverviewPage() {
-  const [role, setRole] = useState<'buyer' | 'seller'>('buyer');
+  const [role, setRole] = useState<'buyer' | 'seller'>('buyer')
 
   const mockOrg = {
     name: 'GrantBridge Initiative',
@@ -18,72 +18,63 @@ export default function OverviewPage() {
     contractValue: '$3.2M',
     compliance: '91% fulfilled',
     recentActivity: [
-      'Reviewed Contract #1829 - Renewal Due',
+      'Reviewed Contract #1829 - Renewal due',
       'Uploaded compliance certificate',
       'Added new collaborator: Alex Rivera',
     ],
-  };
+  }
 
   return (
-    <div className="p-6 space-y-4">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Organization Overview</h1>
-        <button
-          className="text-sm underline text-blue-600"
-          onClick={() => setRole(role === 'buyer' ? 'seller' : 'buyer')}
-        >
-          Switch to {role === 'buyer' ? 'Seller' : 'Buyer'} View
-        </button>
+    <div className="min-h-screen bg-slate-950 px-6 py-8 text-slate-50">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold">Organization overview</h1>
+            <p className="text-sm text-slate-300">A shared source of truth for funding, compliance, and performance.</p>
+          </div>
+          <button
+            className="text-sm underline decoration-dotted underline-offset-4 hover:text-emerald-300"
+            onClick={() => setRole(role === 'buyer' ? 'seller' : 'buyer')}
+          >
+            Switch to {role === 'buyer' ? 'seller' : 'buyer'} view
+          </button>
+        </div>
+
+        <Card>
+          <CardContent className="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Info label="Name" value={mockOrg.name} />
+            <Info label="EIN" value={mockOrg.ein} />
+            <Info label="Region" value={mockOrg.region} />
+            <Info label="Mission" value={mockOrg.mission} />
+            <Info label="Audit status" value={mockOrg.auditStatus} />
+            <Info label="Total contracts" value={String(mockOrg.totalContracts)} />
+            <Info label="Portfolio value" value={mockOrg.contractValue} />
+            <Info label="Compliance" value={mockOrg.compliance} />
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <div className="text-sm font-medium text-slate-500">Recent activity</div>
+            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+              {mockOrg.recentActivity.map((item) => (
+                <li key={item} className="rounded-lg border border-slate-200/60 bg-slate-50 px-4 py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
       </div>
-
-      <Card>
-        <CardContent className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
-          <div>
-            <div className="text-sm text-gray-500">Name</div>
-            <div>{mockOrg.name}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">EIN</div>
-            <div>{mockOrg.ein}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Region</div>
-            <div>{mockOrg.region}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Mission</div>
-            <div>{mockOrg.mission}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Audit Status</div>
-            <div>{mockOrg.auditStatus}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Total Contracts</div>
-            <div>{mockOrg.totalContracts}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Portfolio Value</div>
-            <div>{mockOrg.contractValue}</div>
-          </div>
-          <div>
-            <div className="text-sm text-gray-500">Compliance</div>
-            <div>{mockOrg.compliance}</div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent className="p-4">
-          <div className="text-sm text-gray-500 mb-2">Recent Activity</div>
-          <ul className="list-disc list-inside space-y-1">
-            {mockOrg.recentActivity.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
     </div>
-  );
+  )
 }
 
+function Info({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-xs uppercase tracking-wide text-slate-500">{label}</div>
+      <div className="text-base font-medium text-slate-900">{value}</div>
+    </div>
+  )
+}

@@ -1,49 +1,68 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 type ScreenshotCarouselProps = {
-  images: string[];
-};
+  images: string[]
+}
 
 export function ScreenshotCarousel({ images }: ScreenshotCarouselProps) {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0)
+  const hasMultipleImages = images.length > 1
 
   useEffect(() => {
+    if (!hasMultipleImages) {
+      return
+    }
+
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+      setIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }, 4500)
+
+    return () => clearInterval(interval)
+  }, [hasMultipleImages, images.length])
+
+  if (images.length === 0) {
+    return null
+  }
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-md border border-gray-200 bg-white">
-      <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${index * 100}%)` }}>
+    <div className="relative w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${index * 100}%)` }}
+        aria-live="polite"
+      >
         {images.map((src, i) => (
-          <div key={i} className="min-w-full h-[440px] relative">
-            <Image
-              src={src}
-              alt={`Screenshot ${i + 1}`}
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              priority={i === 0}
-            />
+          <div key={src} className="relative min-w-full">
+            <div className="relative h-[420px] w-full bg-slate-900/5">
+              <Image
+                src={src}
+                alt={`Screenshot ${i + 1}`}
+                fill
+                className="object-contain"
+                priority={i === 0}
+                sizes="(min-width: 1024px) 960px, 100vw"
+              />
+            </div>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full ${i === index ? 'bg-emerald-600' : 'bg-gray-300'}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+      {hasMultipleImages && (
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 shadow">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setIndex(i)}
+              className={`h-2.5 w-2.5 rounded-full ${i === index ? 'bg-emerald-500' : 'bg-slate-300'}`}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-pressed={i === index}
+            />
+          ))}
+        </div>
+      )}
     </div>
-  );
+  )
 }
-

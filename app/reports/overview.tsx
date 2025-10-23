@@ -1,39 +1,43 @@
 // app/reports/overview.tsx
 
-'use client';
+'use client'
 
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card'
 
 const reportData = {
   totalValue: '$2.78M',
   activeContracts: 14,
   highRiskContracts: 2,
   avgDuration: '27 months',
-};
+}
 
 export default function ReportsOverview() {
   return (
-    <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-semibold">Reporting Dashboard</h1>
+    <div className="min-h-screen bg-slate-950 px-6 py-8 text-slate-50">
+      <div className="mx-auto max-w-5xl space-y-6">
+        <div>
+          <h1 className="text-2xl font-semibold">Reporting dashboard</h1>
+          <p className="text-sm text-slate-300">Track value, risk, and performance across the contract portfolio.</p>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard title="Portfolio Value" value={reportData.totalValue} />
-        <StatCard title="Active Contracts" value={reportData.activeContracts} />
-        <StatCard title="High-Risk Flags" value={reportData.highRiskContracts} />
-        <StatCard title="Avg Duration" value={reportData.avgDuration} />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard title="Portfolio value" value={reportData.totalValue} />
+          <StatCard title="Active contracts" value={reportData.activeContracts} />
+          <StatCard title="High-risk flags" value={reportData.highRiskContracts} />
+          <StatCard title="Avg duration" value={reportData.avgDuration} />
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
 function StatCard({ title, value }: { title: string; value: string | number }) {
   return (
     <Card>
-      <CardContent className="p-4 space-y-1">
-        <div className="text-sm text-gray-500">{title}</div>
-        <div className="text-xl font-medium text-gray-800">{value}</div>
+      <CardContent className="space-y-2 p-6">
+        <div className="text-xs uppercase tracking-wide text-slate-500">{title}</div>
+        <div className="text-2xl font-semibold text-slate-900">{value}</div>
       </CardContent>
     </Card>
-  );
+  )
 }
-
